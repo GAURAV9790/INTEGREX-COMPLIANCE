@@ -313,3 +313,43 @@ body {
   transform: scaleX(0);
   animation: heroBarGrow 1.1s ease-out forwards;
 }
+
+/* ZED level card animated borders */
+@keyframes zedBorderShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+.zed-card {
+  position: relative;
+  border-radius: 1.5rem;
+  padding: 2px;
+}
+
+.zed-card-inner {
+  border-radius: inherit;
+  height: 100%;
+}
+
+.zed-card-bronze,
+.zed-card-silver,
+.zed-card-gold {
+  background-size: 300% 300%;
+  animation: zedBorderShift 10s linear infinite;
+}
+
+.zed-card-bronze {
+  background-image: linear-gradient(120deg, #f6d1a4, #9a5a26, #f3c28a, #9a5a26, #f6d1a4);
+}
+
+.zed-card-silver {
+  background-image: linear-gradient(120deg, #f5f7fb, #7b8088, #e4e7ec, #7b8088, #f5f7fb);
+}
+
+.zed-card-gold {
+  background-image: linear-gradient(120deg, #ffe9a6, #c49306, #ffe07a, #c49306, #ffe9a6);
+}

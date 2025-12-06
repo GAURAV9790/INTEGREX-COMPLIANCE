@@ -54,13 +54,13 @@ export default function ContactUs() {
                   <p className="font-semibold text-blue-900">Phone</p>
                   <div className="mt-1 space-y-1">
                     <a href="tel:+918983454112" className="block hover:text-blue-700">
-                      8983454112
+                      +918983454112
                     </a>
                     <a href="tel:+917774034698" className="block hover:text-blue-700">
-                      7774034698
+                      +917774034698
                     </a>
                     <a href="tel:+917757045585" className="block hover:text-blue-700">
-                      7757045585
+                      +917757045585
                     </a>
                   </div>
                 </div>

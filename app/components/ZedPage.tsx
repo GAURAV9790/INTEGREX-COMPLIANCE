@@ -75,13 +75,13 @@ export default function ZedPage() {
                 </p>
               </div>
 
-              <div className="mt-4 lg:mt-0 flex justify-center lg:justify-end">
-                <div className="relative h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32">
+              <div className="mt-6 lg:mt-6 flex justify-center lg:justify-end">
+                <div className="relative h-28 w-28 sm:h-32 sm:w-32 md:h-36 md:w-36 overflow-hidden rounded-full">
                   <Image
                     src="/zed-main.jpg"
                     alt="MSME ZED Certification logo"
                     fill
-                    className="object-contain drop-shadow-[0_12px_32px_rgba(0,0,0,0.9)]"
+                    className="object-cover"
                   />
                 </div>
               </div>
@@ -117,11 +117,8 @@ export default function ZedPage() {
         {/* MSME ZED Certification */}
         <section id="msme-zed-certification" className="pt-4 mb-20">
           <h2 className="mb-1 font-['Poppins'] font-semibold">
-            <span className="block text-[11px] sm:text-xs tracking-[0.22em] uppercase text-blue-100/80 mb-1">
-              MSME
-            </span>
-            <span className="block text-2xl sm:text-3xl bg-gradient-to-r from-amber-200 via-yellow-100 to-emerald-200 bg-clip-text text-transparent">
-              ZED Certification Framework
+            <span className="block text-2xl sm:text-3xl lg:text-[34px] bg-gradient-to-r from-amber-200 via-yellow-100 to-emerald-200 bg-clip-text text-transparent">
+              MSME ZED Certification Framework
             </span>
           </h2>
           <p className="text-sm sm:text-base text-blue-100/90 mb-6 max-w-3xl">
@@ -132,56 +129,62 @@ export default function ZedPage() {
 
           <div className="mt-8 grid gap-7 md:grid-cols-3">
             {/* Bronze card */}
-            <div className="rounded-3xl bg-gradient-to-br from-[#3b2412] via-[#9a5a26] to-[#f3c28a] border border-[#f6d1a4]/80 p-6 shadow-[0_22px_55px_rgba(15,23,42,0.95)] min-h-[260px] sm:min-h-[280px]">
-              <div className="flex flex-col items-center text-center space-y-4">
-                <div className="relative h-24 w-24 sm:h-28 sm:w-28">
-                  <Image
-                    src="/zed-bronze.jpg"
-                    alt="MSME ZED Bronze level certification"
-                    fill
-                    className="object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.85)]"
-                  />
+            <div className="zed-card zed-card-bronze shadow-[0_18px_40px_rgba(15,23,42,0.9)] transform transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_26px_70px_rgba(15,23,42,0.95)]">
+              <div className="zed-card-inner rounded-3xl bg-gradient-to-br from-[#3b2412] via-[#9a5a26] to-[#f3c28a] p-6 min-h-[260px] sm:min-h-[280px]">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="relative h-24 w-24 sm:h-28 sm:w-28">
+                    <Image
+                      src="/zed-bronze.jpg"
+                      alt="MSME ZED Bronze level certification"
+                      fill
+                      className="object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.85)]"
+                    />
+                  </div>
+                  <h3 className="text-lg font-semibold text-amber-200">Bronze Certification</h3>
+                  <p className="text-sm text-slate-100/90">
+                    Entry-level recognition for MSMEs beginning their ZED journey with basic systems and controls.
+                  </p>
                 </div>
-                <h3 className="text-lg font-semibold text-amber-200">Bronze Certification</h3>
-                <p className="text-sm text-slate-100/90">
-                  Entry-level recognition for MSMEs beginning their ZED journey with basic systems and controls.
-                </p>
               </div>
             </div>
 
             {/* Silver card */}
-            <div className="rounded-3xl bg-gradient-to-br from-[#2f343b] via-[#7b8088] to-[#e4e7ec] border border-[#f5f7fb]/80 p-6 shadow-[0_22px_55px_rgba(15,23,42,0.95)] min-h-[260px] sm:min-h-[280px]">
-              <div className="flex flex-col items-center text-center space-y-4">
-                <div className="relative h-24 w-24 sm:h-28 sm:w-28">
-                  <Image
-                    src="/zed-silver.jpg"
-                    alt="MSME ZED Silver level certification"
-                    fill
-                    className="object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.85)]"
-                  />
+            <div className="zed-card zed-card-silver shadow-[0_18px_40px_rgba(15,23,42,0.9)] transform transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_26px_70px_rgba(15,23,42,0.95)]">
+              <div className="zed-card-inner rounded-3xl bg-gradient-to-br from-[#2f343b] via-[#7b8088] to-[#e4e7ec] p-6 min-h-[260px] sm:min-h-[280px]">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="relative h-24 w-24 sm:h-28 sm:w-28">
+                    <Image
+                      src="/zed-silver.jpg"
+                      alt="MSME ZED Silver level certification"
+                      fill
+                      className="object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.85)]"
+                    />
+                  </div>
+                  <h3 className="text-lg font-semibold text-slate-100">Silver Certification</h3>
+                  <p className="text-sm text-slate-100/90">
+                    For MSMEs with strong quality, safety and resource efficiency practices across key processes.
+                  </p>
                 </div>
-                <h3 className="text-lg font-semibold text-slate-100">Silver Certification</h3>
-                <p className="text-sm text-slate-100/90">
-                  For MSMEs with strong quality, safety and resource efficiency practices across key processes.
-                </p>
               </div>
             </div>
 
             {/* Gold card */}
-            <div className="rounded-3xl bg-gradient-to-br from-[#3e2b00] via-[#c49306] to-[#ffe07a] border border-[#ffe9a6]/80 p-6 shadow-[0_22px_55px_rgba(15,23,42,0.95)] min-h-[260px] sm:min-h-[280px]">
-              <div className="flex flex-col items-center text-center space-y-4">
-                <div className="relative h-24 w-24 sm:h-28 sm:w-28">
-                  <Image
-                    src="/zed-gold.jpg"
-                    alt="MSME ZED Gold level certification"
-                    fill
-                    className="object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.85)]"
-                  />
+            <div className="zed-card zed-card-gold shadow-[0_18px_40px_rgba(15,23,42,0.9)] transform transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_26px_70px_rgba(15,23,42,0.95)]">
+              <div className="zed-card-inner rounded-3xl bg-gradient-to-br from-[#3e2b00] via-[#c49306] to-[#ffe07a] p-6 min-h-[260px] sm:min-h-[280px]">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="relative h-24 w-24 sm:h-28 sm:w-28">
+                    <Image
+                      src="/zed-gold.jpg"
+                      alt="MSME ZED Gold level certification"
+                      fill
+                      className="object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.85)]"
+                    />
+                  </div>
+                  <h3 className="text-lg font-semibold text-yellow-200">Gold Certification</h3>
+                  <p className="text-sm text-slate-100/90">
+                    Highest level demonstrating world-class systems, sustainability leadership and global competitiveness.
+                  </p>
                 </div>
-                <h3 className="text-lg font-semibold text-yellow-200">Gold Certification</h3>
-                <p className="text-sm text-slate-100/90">
-                  Highest level demonstrating world-class systems, sustainability leadership and global competitiveness.
-                </p>
               </div>
             </div>
           </div>

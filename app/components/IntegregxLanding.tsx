@@ -299,16 +299,18 @@ export default function IntegregxLanding() {
 
                     {/* 3. LEAN simple item */}
                     <a 
-                      href="#msme-lean"
+                      href="/msme-lean"
                       className="group/item relative block px-6 py-3.5 text-[#0A1A3A] hover:text-[#0d47a1] transition-all duration-300 overflow-hidden font-['Inter'] text-[14.5px]"
                       style={{ transitionDelay: `80ms` }}
                       role="menuitem"
-                    >
+                     >
+
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent -translate-x-full group-hover/item:translate-x-0 transition-transform duration-500"></div>
                       <div className="relative z-10 flex items-center">
                         <span className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-lg mr-3 transform -translate-x-2 group-hover/item:translate-x-0 transition-all duration-300 group-hover/item:rotate-6">
                           <Zap className="w-4 h-4" />
                         </span>
+
                         <div className="overflow-hidden">
                           <div className="transform transition-all duration-300 group-hover/item:translate-y-0 translate-y-0">
                             <span className="block font-medium">MSME Competitive (LEAN) Scheme</span>
@@ -401,7 +403,7 @@ export default function IntegregxLanding() {
                 </span>
                 <br className="hidden sm:block" />
                 <span className="bg-gradient-to-r from-sky-100 via-white to-blue-200 bg-clip-text text-transparent">
-                  In System Management
+                  In Management System
                 </span>
               </h1>
               <p className="hero-subtitle mt-2 font-['Inter'] text-base sm:text-lg md:text-xl text-blue-100/90 leading-relaxed max-w-2xl">
