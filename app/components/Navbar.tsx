@@ -75,9 +75,13 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
             {/* About Us Dropdown */}
             <div className="relative group">
               <div className="relative">
-                <button 
+                <Link
+                  href="/about"
+                  onClick={(e) => isActive('about') && e.preventDefault()}
                   className={`relative flex items-center font-semibold font-['Poppins'] text-[15px] transition-all duration-300 focus:outline-none group px-3 py-2.5 ${
-                    isActive('about') ? 'text-[#0a3d8f]' : 'text-[#0A1A3A] hover:text-[#0a3d8f]'
+                    isActive('about')
+                      ? 'text-[#0a3d8f] cursor-default'
+                      : 'text-[#0A1A3A] hover:text-[#0a3d8f] cursor-pointer'
                   }`}
                 >
                   <span className="relative z-10 flex items-center">
@@ -96,7 +100,7 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
                       isActive('about') ? 'w-full' : 'w-0 group-hover:w-full'
                     }`}></span>
                   </span>
-                </button>
+                </Link>
                 <div className="absolute left-0 right-0 h-4 -bottom-4 z-50"></div>
               </div>
               
@@ -112,7 +116,7 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
                   ].map((item, index) => (
                     <Link 
                       key={item.id}
-                      href={`#${item.id}`}
+                      href={`/about#${item.id}`}
                       className="group/item relative block px-6 py-3.5 text-[#0A1A3A] hover:text-[#0d47a1] transition-all duration-300 overflow-hidden font-['Inter'] text-[14.5px]"
                       style={{ transitionDelay: `${index * 30}ms` }}
                       role="menuitem"
@@ -215,7 +219,7 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
             </div>
 
             <Link
-              href="#contact"
+              href="/contact-us"
               onClick={(e) => isActive('contact') && e.preventDefault()}
               className={`relative px-3 py-2.5 font-semibold font-['Poppins'] text-[15px] transition-all duration-300 group ${
                 isActive('contact') ? 'text-[#0a3d8f] cursor-default' : 'text-[#0A1A3A] hover:text-[#0a3d8f] cursor-pointer'
@@ -231,7 +235,7 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
             {isActive('contact') && <div className="absolute left-0 right-0 h-4 -bottom-4 z-50"></div>}
 
             <Link
-              href="#contact"
+              href="/contact-us"
               className="ml-8 bg-gradient-to-r from-[#0d47a1] to-[#1565c0] text-white px-7 py-2.5 rounded-md font-semibold font-['Poppins'] text-[15px] transition-all duration-300 hover:shadow-[0_4px_18px_rgba(13,71,161,0.25)] hover:-translate-y-0.5 hover:shadow-lg"
             >
               Get In Touch
@@ -287,16 +291,16 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
               </svg>
             </button>
             <div id="mobile-about-menu" className="hidden pl-4 mt-1 space-y-1">
-              <Link href="#history" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">
+              <Link href="/about#history" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">
                 History
               </Link>
-              <Link href="#mission" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">
+              <Link href="/about#mission" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">
                 Mission
               </Link>
-              <Link href="#vision" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">
+              <Link href="/about#vision" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">
                 Vision
               </Link>
-              <Link href="#our-people" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">
+              <Link href="/about#our-people" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">
                 Our People
               </Link>
             </div>
@@ -328,7 +332,7 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
           </div>
 
           <Link
-            href="#contact"
+            href="/contact-us"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
             onClick={() => setIsMobileMenuOpen(false)}
           >
@@ -336,7 +340,7 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
           </Link>
 
           <Link
-            href="#contact"
+            href="/contact-us"
             className="block w-full text-center mt-2 px-4 py-2.5 bg-gradient-to-r from-[#0d47a1] to-[#1565c0] text-white rounded-md font-semibold text-base hover:shadow-lg transition-all duration-300"
             onClick={() => setIsMobileMenuOpen(false)}
           >
