@@ -18,7 +18,7 @@ export default function ContactUs() {
             Contact Us
           </p>
           <h1 className="mt-4 text-3xl sm:text-4xl font-semibold text-white font-['Poppins']">
-            Integrex Compliance Tech Private Limited
+            INTEGREX COMPLIANCE TECH PRIVATE LIMITED 
           </h1>
           <p className="mt-3 text-sm sm:text-base text-slate-200 font-['Inter']">
             We are here to support you with compliance, management systems, and sustainable growth.
@@ -51,16 +51,16 @@ export default function ContactUs() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div className="text-sm sm:text-base font-['Inter'] text-slate-700">
-                  <p className="font-semibold text-blue-900">Phone</p>
+                  <p className="font-semibold text-blue-900">Phone </p>
                   <div className="mt-1 space-y-1">
                     <a href="tel:+918983454112" className="block hover:text-blue-700">
-                      +918983454112
+                      +91 8983454112
                     </a>
                     <a href="tel:+917774034698" className="block hover:text-blue-700">
-                      +917774034698
+                      +91 7774034698
                     </a>
                     <a href="tel:+917757045585" className="block hover:text-blue-700">
-                      +917757045585
+                      +91 7757045585
                     </a>
                   </div>
                 </div>
@@ -73,16 +73,30 @@ export default function ContactUs() {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div className="text-sm sm:text-base font-['Inter'] text-slate-700">
-                  <p className="font-semibold text-blue-900">Email</p>
+                  <p className="font-semibold text-blue-900">Email </p>
                   <div className="mt-1 space-y-1">
                     <a
-                      href="mailto:integrex.iso@gmail.com"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=admin@integrex.in"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block break-all hover:text-blue-700"
+                    >
+                      admin@integrex.in
+                    </a>
+
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=integrex.iso@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="block break-all hover:text-blue-700"
                     >
                       integrex.iso@gmail.com
                     </a>
+
                     <a
-                      href="mailto:integrextech@gmail.com"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=integrextech@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="block break-all hover:text-blue-700"
                     >
                       integrextech@gmail.com

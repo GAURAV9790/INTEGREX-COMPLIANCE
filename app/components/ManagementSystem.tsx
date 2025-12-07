@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Linkedin, Facebook, Twitter } from "lucide-react";
+import { Linkedin, Instagram } from "lucide-react";
 import Navbar from "../components/Navbar";
 
 const isoSections = [
@@ -376,16 +376,10 @@ export default function ManagementSystem() {
                     <Linkedin className="w-5 h-5 transition-transform duration-200 group-hover:scale-110" />
                   </a>
                   <a
-                    href="#facebook"
+                    href="#instagram"
                     className="group text-gray-400 hover:text-white transition-all duration-200 transform hover:-translate-y-0.5"
                   >
-                    <Facebook className="w-5 h-5 transition-transform duration-200 group-hover:scale-110" />
-                  </a>
-                  <a
-                    href="#twitter"
-                    className="group text-gray-400 hover:text-white transition-all duration-200 transform hover:-translate-y-0.5"
-                  >
-                    <Twitter className="w-5 h-5 transition-transform duration-200 group-hover:scale-110" />
+                    <Instagram className="w-5 h-5 transition-transform duration-200 group-hover:scale-110" />
                   </a>
                 </div>
               </div>

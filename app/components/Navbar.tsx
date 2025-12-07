@@ -2,7 +2,32 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Settings, FileText, Target, Eye, Users, Menu, X } from 'lucide-react';
+import { Settings, FileText, Target, Eye, Users, Menu, X, Leaf, Zap } from 'lucide-react';
+
+const isoMenuLinks = [
+  { href: '/management-system#iso-9001', label: 'ISO 9001 - Quality Management System (QMS)' },
+  { href: '/management-system#iso-14001', label: 'ISO 14001 - Environmental Management System (EMS)' },
+  { href: '/management-system#iso-45001', label: 'ISO 45001 - Occupational Health & Safety Management System (OHSMS)' },
+  { href: '/management-system#iatf-16949', label: 'IATF 16949 - Automotive Quality Management System (AQMS)' },
+  { href: '/management-system#as-9100', label: 'AS 9100 - Aerospace Quality Management System (ASQMS)' },
+  { href: '/management-system#iso-27001', label: 'ISO 27001 - Information Security Management System (ISMS)' },
+];
+
+const zedMenuLinks = [
+  { href: '/msme-sustainable#about-zed', label: 'About ZED' },
+  { href: '/msme-sustainable#msme-zed-certification', label: 'MSME ZED Certification' },
+  { href: '/msme-sustainable#msme-zed-benefits', label: 'MSME ZED Benefits & Incentives' },
+];
+
+const regulatoryMenuLinks = [
+  { href: '/regulatory-compliance#nsic-registration', label: 'NSIC Registration' },
+  { href: '/regulatory-compliance#factory-act', label: 'Factory Act' },
+  { href: '/regulatory-compliance#mpcb-compliance', label: 'MPCB Compliance' },
+  { href: '/regulatory-compliance#trade-mark-compliance', label: 'Trade Mark Compliance' },
+  { href: '/regulatory-compliance#copy-right-compliance', label: 'Copy Right Compliance' },
+  { href: '/regulatory-compliance#ce-marking-certification', label: 'CE Marking Certification' },
+  { href: '/regulatory-compliance#fssi', label: 'FSSI' },
+];
 
 type NavbarProps = {
   currentPage?: 'home' | 'management-system' | 'services' | 'about' | 'contact';
@@ -112,7 +137,8 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
                     { id: 'history', label: 'History', icon: <FileText className="w-4 h-4" /> },
                     { id: 'mission', label: 'Mission', icon: <Target className="w-4 h-4" /> },
                     { id: 'vision', label: 'Vision', icon: <Eye className="w-4 h-4" /> },
-                    { id: 'our-people', label: 'Our People', icon: <Users className="w-4 h-4" /> }
+                    { id: 'our-people', label: 'Our People', icon: <Users className="w-4 h-4" /> },
+                    { id: 'people-we-serve', label: 'People We Serve', icon: <Users className="w-4 h-4" /> }
                   ].map((item, index) => (
                     <Link 
                       key={item.id}
@@ -164,54 +190,123 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
                 </Link>
                 <div className="absolute left-0 right-0 h-4 -bottom-4 z-50"></div>
               </div>
-              
+
               <div className="absolute left-1/2 -translate-x-1/2 mt-1 w-80 rounded-xl bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50 border border-gray-100/50">
                 <div className="relative z-10 py-2" role="menu" aria-orientation="vertical">
-                  <Link 
-                    href="/management-system"
-                    className="group/item relative block px-6 py-3.5 text-[#0A1A3A] hover:text-[#0d47a1] transition-all duration-300 font-['Inter'] text-[14.5px]"
+                  {/* Management System with ISO submenu */}
+                  <div className="relative group/item">
+                    <Link
+                      href="/management-system"
+                      className="relative block px-6 py-3.5 text-[#0A1A3A] hover:text-[#0d47a1] hover:bg-blue-50/80 transition-all duration-200 font-['Inter'] text-[14.5px] rounded-lg group/item"
+                      role="menuitem"
+                    >
+                      <div className="flex items-center">
+                        <span className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-lg mr-3 transform -translate-x-2 group-hover/item:translate-x-0 transition-all duration-300 group-hover/item:rotate-6">
+                          <Settings className="w-4 h-4" />
+                        </span>
+                        <span className="font-medium text-left">Management System</span>
+                      </div>
+                    </Link>
+
+                    <div className="absolute top-0 left-full ml-2 w-[360px] rounded-xl bg-white shadow-xl border border-gray-100/80 opacity-0 invisible group-hover/item:opacity-100 group-hover/item:visible transition-all duration-200 transform -translate-x-2 group-hover/item:translate-x-0 z-50">
+                      <div className="py-3 text-[13.5px] font-['Inter'] text-[#0A1A3A]">
+                        {isoMenuLinks.map((link) => (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            className="flex items-start px-5 py-1.5 hover:bg-blue-50 hover:text-[#0d47a1] transition-colors duration-200"
+                          >
+                            <span className="mt-1 mr-2 h-2 w-2 rounded-full bg-blue-500" />
+                            <span>{link.label}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* MSME Sustainable ZED with 3 subsections */}
+                  <div className="relative group/item mt-0.5">
+                    <Link
+                      href="/msme-sustainable"
+                      className="relative block px-6 py-3.5 text-[#0A1A3A] hover:text-[#0d47a1] hover:bg-blue-50/80 transition-all duration-200 font-['Inter'] text-[14.5px] rounded-lg group/item"
+                      role="menuitem"
+                    >
+                      <div className="flex items-center">
+                        <span className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-lg mr-3 transform -translate-x-2 group-hover/item:translate-x-0 transition-all duration-300 group-hover/item:rotate-6">
+                          <Leaf className="w-4 h-4" />
+                        </span>
+                        <span className="font-medium text-left">MSME Sustainable ZED Certification Scheme</span>
+                      </div>
+                    </Link>
+
+                    <div className="absolute top-0 left-full ml-2 w-72 rounded-xl bg-white shadow-xl border border-gray-100/80 opacity-0 invisible group-hover/item:opacity-100 group-hover/item:visible transition-all duration-200 transform -translate-x-2 group-hover/item:translate-x-0 z-50">
+                      <div className="py-3 text-[13.5px] font-['Inter'] text-[#0A1A3A]">
+                        {zedMenuLinks.map((link) => (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            className="flex items-start px-5 py-1.5 hover:bg-blue-50 hover:text-[#0d47a1] transition-colors duration-200"
+                          >
+                            <span className="mt-1 mr-2 h-2 w-2 rounded-full bg-blue-500" />
+                            <span>{link.label}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* MSME LEAN - direct link */}
+                  <Link
+                    href="/msme-lean"
+                    className="group/item relative block px-6 py-3.5 text-[#0A1A3A] hover:text-[#0d47a1] hover:bg-blue-50/80 transition-all duration-200 font-['Inter'] text-[14.5px] rounded-lg"
                     role="menuitem"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent -translate-x-full group-hover/item:translate-x-0 transition-transform duration-500"></div>
-                    
-                    <div className="relative z-10 flex items-center">
+                    <div className="flex items-center">
                       <span className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-lg mr-3 transform -translate-x-2 group-hover/item:translate-x-0 transition-all duration-300 group-hover/item:rotate-6">
-                        <Settings className="w-4 h-4" />
+                        <Zap className="w-4 h-4" />
                       </span>
-                      <span className="font-medium">Management System</span>
+                      <span className="font-medium text-left">MSME Competitive (LEAN) Scheme</span>
                     </div>
                   </Link>
 
-                  <div className="relative group mt-1">
-                    <button
-                      type="button"
-                      className="relative flex w-full items-center justify-between px-6 py-3.5 text-[#0A1A3A] hover:text-[#0d47a1] transition-all duration-300 font-['Inter'] text-[14.5px]"
+                  {/* Regulatory Compliance with submenu */}
+                  <div className="relative group/item mt-0.5">
+                    <Link
+                      href="/regulatory-compliance"
+                      className="relative block px-6 py-3.5 text-[#0A1A3A] hover:text-[#0d47a1] hover:bg-blue-50/80 transition-all duration-200 font-['Inter'] text-[14.5px] rounded-lg group/item"
+                      role="menuitem"
                     >
-                      <div className="relative z-10 flex items-center">
-                        <span className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-lg mr-3 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300 group-hover:rotate-6">
-                          <Settings className="w-4 h-4" />
-                        </span>
-                        <span className="font-medium">Regulatory Compliance</span>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center">
+                          <span className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-lg mr-3 transform -translate-x-2 group-hover/item:translate-x-0 transition-all duration-300 group-hover/item:rotate-6">
+                            <Settings className="w-4 h-4" />
+                          </span>
+                          <span className="font-medium text-left">Regulatory Compliance</span>
+                        </div>
+                        <svg
+                          className="w-4 h-4 ml-3 text-gray-400 group-hover/item:text-[#0d47a1] group-hover/item:translate-x-0.5 transition-all duration-300"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
                       </div>
-                      <svg
-                        className="w-4 h-4 text-gray-400 transition-transform duration-300 group-hover:translate-x-0.5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
+                    </Link>
 
-                    <div className="absolute top-1/2 left-full -translate-y-1/2 w-64 rounded-xl bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform -translate-x-2 group-hover:translate-x-0 border border-gray-100/70">
-                      <ul className="py-2 text-[14px] font-['Inter'] text-[#0A1A3A]">
-                        <li className="px-5 py-2 hover:bg-blue-50 hover:text-[#0d47a1] transition-colors duration-200">NSIC Registration</li>
-                        <li className="px-5 py-2 hover:bg-blue-50 hover:text-[#0d47a1] transition-colors duration-200">MPCB Compliance</li>
-                        <li className="px-5 py-2 hover:bg-blue-50 hover:text-[#0d47a1] transition-colors duration-200">Trade Mark Compliance</li>
-                        <li className="px-5 py-2 hover:bg-blue-50 hover:text-[#0d47a1] transition-colors duration-200">Copy Right Compliance</li>
-                        <li className="px-5 py-2 hover:bg-blue-50 hover:text-[#0d47a1] transition-colors duration-200">CE Marking Certification</li>
-                        <li className="px-5 py-2 hover:bg-blue-50 hover:text-[#0d47a1] transition-colors duration-200">FSSI</li>
-                      </ul>
+                    <div className="absolute top-0 left-full ml-2 w-72 rounded-xl bg-white shadow-xl border border-gray-100/80 opacity-0 invisible group-hover/item:opacity-100 group-hover/item:visible transition-all duration-200 transform -translate-x-2 group-hover/item:translate-x-0 z-50">
+                      <div className="py-3 text-[13.5px] font-['Inter'] text-[#0A1A3A]">
+                        {regulatoryMenuLinks.map((link) => (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            className="flex items-start px-5 py-1.5 hover:bg-blue-50 hover:text-[#0d47a1] transition-colors duration-200"
+                          >
+                            <span className="mt-1 mr-2 h-2 w-2 rounded-full bg-blue-500" />
+                            <span>{link.label}</span>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -303,6 +398,9 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
               <Link href="/about#our-people" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">
                 Our People
               </Link>
+              <Link href="/about#people-we-serve" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">
+                People We Serve
+              </Link>
             </div>
           </div>
 
@@ -325,7 +423,13 @@ export default function Navbar({ currentPage = 'home' }: NavbarProps) {
               <Link href="/management-system" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">
                 Management System
               </Link>
-              <Link href="#regulatory-compliance" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">
+              <Link href="/msme-sustainable" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">
+                MSME Sustainable ZED Certification Scheme
+              </Link>
+              <Link href="/msme-lean" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">
+                MSME Competitive (LEAN) Scheme
+              </Link>
+              <Link href="/regulatory-compliance" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50">
                 Regulatory Compliance
               </Link>
             </div>

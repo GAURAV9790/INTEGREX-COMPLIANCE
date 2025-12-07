@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { Settings, Leaf, Zap, FileText, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Settings, Leaf, Zap, FileText, Users, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function ServicesSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -34,6 +34,25 @@ export default function ServicesSlider() {
       description: "Statutory and regulatory compliance involves adhering to laws, rules, and standards set by governments and regulatory bodies to ensure a business operates legally and ethically..",
       color: "from-blue-600 to-blue-700",
       bgColor: "bg-blue-600"
+    },
+    {
+      icon: Users,
+      title: "OUR CLIENTS",
+      description:
+        "We collaborate with clients across automotive, construction, IT, education, food, home appliances and other sectors, building long-term partnerships based on trust, compliance and continual improvement. Our clients include organizations from different industries who trust us for their management systems and compliance needs.",
+      color: "from-blue-600 to-blue-700",
+      bgColor: "bg-blue-600",
+      hideButton: true,
+      clients: [
+        "KTD Multi Tool & Dies",
+        "ME Engineering Works Pvt. Ltd.",
+        "SS Engineering Works",
+        "Dynamic",
+        "freewill",
+        "BTSL",
+        "Palladium",
+        "Roxberry Technologies"
+      ]
     }
   ];
 
@@ -120,19 +139,33 @@ export default function ServicesSlider() {
                           <div className="space-y-4 max-w-2xl">
                             <h2 className="text-2xl md:text-2xl font-bold text-white tracking-tight">{service.title}</h2>
                             <p className="text-blue-100/90 leading-relaxed text-sm md:text-base">{service.description}</p>
+                            {service.clients && (
+                              <div className="flex flex-wrap justify-center gap-3 mt-4">
+                                {service.clients.map((client, idx) => (
+                                  <span
+                                    key={idx}
+                                    className={`inline-flex items-center rounded-full ${service.title === "OUR CLIENTS" ? "bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500" : "bg-white/10"} px-4 py-1.5 text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide ${service.title === "OUR CLIENTS" ? "text-white" : "text-blue-50"} shadow-md ${service.title === "OUR CLIENTS" ? "shadow-blue-900/30" : ""} transform hover:-translate-y-0.5 hover:shadow-lg hover:brightness-110 transition-all duration-200 font-['Poppins']`}
+                                  >
+                                    {client}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
                           </div>
                           
-                          <div className="pt-2">
-                            <button className="relative px-8 py-3 rounded-full font-bold text-white bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-300 hover:to-orange-400 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl shadow-yellow-500/30 hover:shadow-yellow-500/40 overflow-hidden group">
-                              <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></span>
-                              <span className="relative flex items-center justify-center space-x-2">
-                                <span>Apply Now</span>
-                                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
-                              </span>
-                            </button>
-                          </div>
+                          {!service.hideButton && (
+                            <div className="pt-2">
+                              <button className="relative px-8 py-3 rounded-full font-bold text-white bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-300 hover:to-orange-400 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl shadow-yellow-500/30 hover:shadow-yellow-500/40 overflow-hidden group">
+                                <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></span>
+                                <span className="relative flex items-center justify-center space-x-2">
+                                  <span>Apply Now</span>
+                                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                  </svg>
+                                </span>
+                              </button>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
